@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Bea</title>
+    <link rel="stylesheet" href="./beautiful.css">
+</head>
+<body>
+    <header>
+        <h1>What's Time?</h1>
+        <input type="text" class="time" id="time" disabled />
+    </header>
+    <main>
+        <section>
+            <div class="calculator">
+                <div class="screen-side">
+                   <table>
+                    <tr>
+                        <td>
+                            <h2>HP 10s+ Scientific Calculator (replicated)</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+
+                            <input type="text" id="result" class="screen" style="text-align: justify;">
+                        </td>
+                    </tr>
+                   </table>
+                </div>
+                <div class="first">
+                    <div class="keys" id="keys1">
+                        <input type="button" class="btn" onclick="toggleShift()" value="SHIFT">
+                        <input type="button" class="btn" onclick="performFunction('ALPHA')" value="ALPHA">
+                        <input type="button" class="btn" onclick="performFunction('MODE')" value="MODE"><span  class="secondary"><div class="cl">CLR</div></span>
+                        <input type="button" class="btn" onclick="performFunction('ON')" value="ON">
+                    </div>
+
+
+                    <div class="keys" id="keys2">
+                       <div class="ke">
+                         <span class="secondary">X!</span>
+                        <input type="button" class="btn" onclick="performFunction('X^-1')" value="X^-1">
+                    </div>
+
+                        <div class="ke">
+                            <span class="secondary">nPr</span> 
+                            <input type="button" class="btn" onclick="performFunction('nCr')" value="nCr">
+                        </div>
+                       
+
+                        <div class="ke">
+                             <span class="secondary">Rec(</span> 
+                             <input type="button" class="btn" onclick="performFunction('Polar(')" value="Pol(">
+                            </div>
+                       
+
+                        <div class="ke">
+                            <span class="secondary">d/c</span>
+                            <input type="button" class="btn" onclick="performFunction('a^b/c')" value="a^b/c">
+                        </div>
+                    </div>
+                    <div class="keys" id="keys3">
+
+                        <input type="button" class="btn" onclick="performFunction('sqrt')" value="√">
+                        <input type="button" class="btn" onclick="performFunction('X^-2')" value="X^-2">
+                       
+
+                        <div class="ke">
+                            <span class="secondary">³√</span>
+                             <input type="button" class="btn" onclick="performFunction('x^3')" value="x^3">
+                        </div>
+                       
+
+                        <div class="ke">
+                            <span class="secondary">y^x</span>
+                            <input type="button" class="btn" onclick="performFunction('y^x')" value="y^x">
+                        </div>
+
+
+                       <div class="ke">
+                        <span class="secondary">10<sup>x</sup></span>
+                        <input type="button" class="btn" onclick="performFunction('log')" value="log">
+                       </div>
+
+
+                       <div class="ke">
+                        <span class="secondary">e<sup>x</sup></span>
+                        <span class="tertiary">e</span>
+                        <input type="button" class="btn" onclick="performFunction('In')" value="In">
+                       </div>
+                    </div>
+
+
+                    <div class="keys" id="keys4">
+                       
+                        <div class="ke">
+                            <span class="tertiary">A</span>
+                            <input type="button" class="btn" onclick="performFunction('(-)')" value="(-)">
+                        </div>
+
+
+                        <div class="ke">
+                            <span class="secondary">←</span>
+                             <span class="tertiary">B</span>
+                            <input type="button" class="btn" onclick="performFunction(',,,')" value=",">
+                        </div>
+                        
+
+                        <div class="ke">
+                            <span class="tertiary">C</span>
+                            <input type="button" class="btn" onclick="performFunction('hyp')" value="hyp">
+                        </div>
+                       
+
+                        <div class="ke">
+                            <span class="secondary">sin<sup>-1</sup>
+                            </span> <span class="tertiary">D</span>
+                            <input type="button" class="btn" onclick="performFunction('sin')" value="sin">
+                        </div>
+
+
+                        <div class="ke">
+                            <span class="secondary">cos<sup>-1</sup></span>
+                             <span class="tertiary">E</span>
+                            <input type="button" class="btn" onclick="performFunction('cos')" value="cos">
+                        </div>
+
+
+                       <div class="ke">
+                        <span class="secondary">tan<sup>-1</sup></span>
+                        <span class="tertiary">F</span>
+                        <input type="button" class="btn" onclick="performFunction('tan')" value="tan">
+                       </div>
+                    </div>
+
+
+
+                    <div class="keys" id="keys5">
+                       <div class="ke">
+                        <span class="tertiary">STO</span>
+                        <input type="button" class="btn" onclick="performFunction('RCL')" value="RCL">
+                       </div>
+
+
+                       <div class="ke">
+                        <span class="secondary">←</span>
+                        <input type="button" class="btn" onclick="performFunction('ENG')" value="ENG">
+                       </div>
+
+                       
+                        <input type="button" class="btn" onclick="appendParenthesis('( ')" value="(">
+                        
+
+                        <div class="ke">
+                            <span class="tertiary">X</span>
+                            <input type="button" class="btn" onclick="appendParenthesis(' )')" value=")">
+                        </div>
+                 
+
+                        <div class="ke">
+                            <span class="secondary">;</span>
+                             <span class="tertiary">Y</span>
+                            <input type="button" class="btn" onclick="performFunction(',')" value=",">
+                        </div>
+
+
+                        <div class="ke">
+                            <span class="secondary">M-</span>
+                            <span class="tertiary">M</span>
+                            <input type="button" class="btn" onclick="performMemoryFunction('M+')" value="M+">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="second">
+                    <div class="keys" id="keys6">
+                        <input type="button" class="btn" onclick="appendNumbert(7)" value="7">
+                        <input type="button" class="btn" onclick="appendNumbert(8)" value="8">
+                        <input type="button" class="btn" onclick="appendNumbert(9)" value="9">
+                        <div class="ke"> <span    class="secondary">OFF</span>   <input type="button" class="btn"    onclick="clearAll()" value="AC"></div>
+                            <div class="ke"><span class="secondary">DT </span>
+                            <span class="tertiary">[CLR]</span>
+                             <input type="button" class="btn" onclick="deleteAll()" value="DEL"></div>
+                    </div>
+                    <div class="keys" id="keys7">
+                        <input type="button" class="btn" onclick="appendNumbert(4)" value="4">
+                        <input type="button" class="btn" onclick="appendNumbert(5)" value="5">
+                        <input type="button" class="btn" onclick="appendNumbert(6)" value="6">
+                        <input type="button" class="btn" onclick="setOperation('*')" value="*">
+
+                        <div class="ke">
+                            <span class="secondary">INS</span> 
+                             <input type="button" class="btn" onclick="setOperation('÷')" value="÷">
+                        </div>
+                    </div>
+
+
+                    <div class="keys" id="keys8">
+                       <div class="ke"> 
+                        <span class="secondary">S-SUM</span>
+                        <input type="button" class="btn" onclick="appendNumbert(1)" value="1">
+                    </div>
+
+                    <div class="ke">
+                        <span class="secondary">S-VAR</span>
+                        <input type="button" class="btn" onclick="appendNumbert(2)" value="2">
+                    </div>
+                        <input type="button" class="btn" onclick="appendNumbert(3)" value="3">
+                        <input type="button" class="btn" onclick="setOperation('+')" value="+">
+                        <input type="button" class="btn" onclick="setOperation('-')" value="-">
+                    </div>
+
+                    <div class="keys" id="keys9">
+
+                        <div class="ke">
+                            <span class="secondary">Rnd</span>
+                            <input type="button" class="btn" onclick="appendNumbert(0)" value="0">
+                        </div>
+                      
+                        <div class="ke">
+                            <span class="secondary">Ran#</span>
+                            <input type="button" class="btn" onclick="appendDecimal()" value=".">
+                        </div>
+
+
+                        <div class="ke">
+                            <span class="secondary">π</span>
+                            <input type="button" class="btn" onclick="performFunction('EXP')" value="Exp">
+                        </div>
+
+                       <div class="ke">
+                        <span class="secondary">DRG></span>
+                        <input type="button" class="btn" onclick="answerAll()" value="Ans">
+                       </div>
+
+                       <div class="ke">
+                        <span class="secondary">%</span>
+                        <input type="button" class="btn" onclick="calculate()" value="=">
+                       </div>
+                    </div>
+                </div>
+                <div class="ex">
+                    <div>
+                        <h2>Extra Symbols</h2>
+                        <div class="keys" id="keys10">
+                            <input type="button" class="btn" onclick="performFunction('tensorProduct')" value="⊗">
+                            <input type="button" class="btn" onclick="performFunction('intersection')" value="∩">
+                            <input type="button" class="btn" onclick="performFunction('elementOf')" value="∈">
+                            <input type="button" class="btn" onclick="performFunction('notElementOf')" value="∉">
+                            <input type="button" class="btn" onclick="performFunction('union')" value="∪">
+                            <input type="button" class="btn" onclick="performFunction('Im')" value="Im">
+                            <input type="button" class="btn" onclick="performFunction('Re')" value="Re">
+                            <input type="button" class="btn" onclick="appendConstant('i')" value="i">
+                            <input type="button" class="btn" onclick="setOperation('≠')" value="≠">
+                            <input type="button" class="btn" onclick="setOperation('<')" value="<">
+                            <input type="button" class="btn" onclick="setOperation('>')" value=">">
+                            <input type="button" class="btn" onclick="setOperation('≤')" value="≤">
+                            <input type="button" class="btn" onclick="setOperation('≥')" value="≥">
+                            <input type="button" class="btn" onclick="appendBrace('{')" value="{">
+                            <input type="button" class="btn" onclick="appendBrace('}')" value="}">
+                            <input type="button" class="btn" onclick="appendBracket('[')" value="[">
+                            <input type="button" class="btn" onclick="appendBracket(']')" value="]">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    Quinilacute's Beautiful Piece
+
+    <script src="./beautiful.js"></script>
+</body>
+</html>
